@@ -154,6 +154,7 @@ function lib:Register(mediatype, key, data, langmask)
 	if mtable[key] then return false end
 	
 	mtable[key] = data
+	rebuildMediaList(mediatype)
 	self.callbacks:Fire("LibSharedMedia_Registered", mediatype, key)
 	return true
 end
