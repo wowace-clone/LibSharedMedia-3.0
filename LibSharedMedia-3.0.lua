@@ -36,54 +36,45 @@ lib.LOCALE_BIT_western	= 128
 
 local CallbackHandler = LibStub:GetLibrary("CallbackHandler-1.0")
 
-lib.callbacks	= lib.callbacks	or CallbackHandler:New(lib)
+lib.callbacks		= lib.callbacks			or CallbackHandler:New(lib)
 
-lib.MediaType = lib.MediaType or {
-	BACKGROUND  = "background",			-- background textures
-	BORDER      = "border",				-- border textures
-	FONT		= "font",				-- fonts
-	STATUSBAR	= "statusbar",			-- statusbar textures
-	SOUND		= "sound",				-- sound files
-}
+lib.DefaultMedia	= lib.DefaultMedia		or {}
+lib.MediaList		= lib.MediaList			or {}
+lib.MediaTable		= lib.MediaTable		or {}
+lib.MediaType		= lib.MediaType			or {}
+lib.OverrideMedia	= lib.OverrideMedia		or {}
 
-lib.MediaTable = lib.MediaTable or {
-	background = {
-		["Blizzard Low Health"]			= [[Interface\FullScreenTextures\LowHealth]],
-		["Blizzard Out of Control"]		= [[Interface\FullScreenTextures\OutOfControl]],
-		["Blizzard Tabard Background"]	= [[Interface\TabardFrame\TabardFrameBackground]],
-		["Solid"]						= [[Interface\Buttons\WHITE8X8]],
-		["Blizzard Tooltip"]			= [[Interface\Tooltips\UI-Tooltip-Background]],
-	},
+local defaultMedia = lib.DefaultMedia
+local mediaList = lib.MediaList
+local mediaTable = lib.MediaTable
+local overrideMedia = lib.OverrideMedia
 
-	border = {
-		["None"]						= [[Interface\None]],
-		["Blizzard Dialog"]				= [[Interface\DialogFrame\UI-DialogBox-Border]],
-		["Blizzard Tooltip"]			= [[Interface\Tooltips\UI-Tooltip-Border]],
-	},
 
-	-- font is set further below because of different client fonts
+-- create mediatype constants
+lib.MediaType.BACKGROUND	= "background"			-- background textures
+lib.MediaType.BORDER		= "border"				-- border textures
+lib.MediaType.FONT			= "font"				-- fonts
+lib.MediaType.STATUSBAR		= "statusbar"			-- statusbar textures
+lib.MediaType.SOUND			= "sound"				-- sound files
 
-	sound = {
-		-- Relies on the fact that PlaySound[File] doesn't error on non-existing input.
-		["None"]						= [[Interface\Quiet.mp3]],
-	},
+-- populate lib with default Blizzard data
+-- BACKGROUND
+if not lib.MediaTable.background then lib.MediaTable.background = {} end
+lib.MediaTable.background["Blizzard Low Health"]			= [[Interface\FullScreenTextures\LowHealth]]
+lib.MediaTable.background["Blizzard Out of Control"]		= [[Interface\FullScreenTextures\OutOfControl]]
+lib.MediaTable.background["Blizzard Tabard Background"]		= [[Interface\TabardFrame\TabardFrameBackground]]
+lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
+lib.MediaTable.background["Blizzard Tooltip"]				= [[Interface\Tooltips\UI-Tooltip-Background]]
 
-	statusbar = {
-		["Blizzard"]					= [[Interface\TargetingFrame\UI-StatusBar]],
-	},
-}
+-- BORDER
+if not lib.MediaTable.border then lib.MediaTable.border = {} end
+lib.MediaTable.border["None"]								= [[Interface\None]]
+lib.MediaTable.border["Blizzard Dialog"]					= [[Interface\DialogFrame\UI-DialogBox-Border]]
+lib.MediaTable.border["Blizzard Tooltip"]					= [[Interface\Tooltips\UI-Tooltip-Border]]
 
-lib.DefaultMedia = lib.DefaultMedia or {
-	font = "Friz Quadrata TT",
-	statusbar = "Blizzard",
-}
-
+-- FONT
+if not lib.MediaTable.font then lib.MediaTable.font = {} end
 local SML_MT_font = lib.MediaTable.font
-if not SML_MT_font then
-	lib.MediaTable.font = {}
-	SML_MT_font = lib.MediaTable.font
-end
-
 if locale == "koKR" then
 	LOCALE_MASK = lib.LOCALE_BIT_koKR
 --
@@ -121,16 +112,20 @@ else
 	SML_MT_font["Friz Quadrata TT"]		= [[Fonts\FRIZQT__.TTF]]
 	SML_MT_font["Morpheus"]				= [[Fonts\MORPHEUS.TTF]]
 	SML_MT_font["Skurri"]				= [[Fonts\SKURRI.TTF]]
+--
+	lib.DefaultMedia.font = "Friz Quadrata TT"
+--
 end
 
-lib.OverrideMedia = lib.OverrideMedia or {}
+-- STATUSBAR
+if not lib.MediaTable.statusbar then lib.MediaTable.statusbar = {} end
+lib.MediaTable.statusbar["Blizzard"]						= [[Interface\TargetingFrame\UI-StatusBar]]
+lib.DefaultMedia.statusbar = "Blizzard"
 
-lib.MediaList = lib.MediaList or {}
-
-local defaultMedia = lib.DefaultMedia
-local mediaList = lib.MediaList
-local mediaTable = lib.MediaTable
-local overrideMedia = lib.OverrideMedia
+-- SOUND
+if not lib.MediaTable.sound then lib.MediaTable.sound = {} end
+lib.MediaTable.sound["None"]								= [[Interface\Quiet.mp3]]	-- Relies on the fact that PlaySound[File] doesn't error on non-existing input.
+lib.DefaultMedia.sound = "None"
 
 local function rebuildMediaList(mediatype)
 	local mtable = mediaTable[mediatype]
