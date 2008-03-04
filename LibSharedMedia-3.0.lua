@@ -1,17 +1,17 @@
 ﻿--[[
 Name: LibSharedMedia-3.0
-Revision: $Revision: 0 $
+Revision: $Revision$
 Author: Elkano (elkano@gmx.de)
 Inspired By: SurfaceLib by Haste/Otravi (troeks@gmail.com)
 Website: http://
 Documentation: http://www.wowace.com/wiki/LibSharedMedia-3.0
 SVN: http://svn.wowace.com/wowace/trunk/LibSharedMedia-3.0/
 Description: Shared handling of media data (fonts, sounds, textures, ...) between addons.
-Dependencies: None
+Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", "$Revision: 0 $"
+local MAJOR, MINOR = "LibSharedMedia-3.0", "$Revision$"
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
