@@ -11,7 +11,7 @@ Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", "$Revision$"
+local MAJOR, MINOR = "LibSharedMedia-3.0", 90000 + tonumber(("$Revision$"):match("(%d+)"))
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
