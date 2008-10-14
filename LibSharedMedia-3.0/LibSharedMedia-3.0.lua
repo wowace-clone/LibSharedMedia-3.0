@@ -3,9 +3,7 @@ Name: LibSharedMedia-3.0
 Revision: $Revision$
 Author: Elkano (elkano@gmx.de)
 Inspired By: SurfaceLib by Haste/Otravi (troeks@gmail.com)
-Website: http://
-Documentation: http://www.wowace.com/wiki/LibSharedMedia-3.0
-SVN: http://svn.wowace.com/wowace/trunk/LibSharedMedia-3.0/
+Website: http://www.wowace.com/projects/libsharedmedia-3-0/
 Description: Shared handling of media data (fonts, sounds, textures, ...) between addons.
 Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
@@ -30,9 +28,9 @@ local locale = GetLocale()
 local locale_is_western
 local LOCALE_MASK = 0
 lib.LOCALE_BIT_koKR		= 1
-lib.LOCALE_BIT_zhCN		= 2
-lib.LOCALE_BIT_zhTW		= 4
-lib.LOCALE_BIT_ruRU		= 128
+lib.LOCALE_BIT_ruRU		= 2
+lib.LOCALE_BIT_zhCN		= 4
+lib.LOCALE_BIT_zhTW		= 8
 lib.LOCALE_BIT_western	= 128
 
 local CallbackHandler = LibStub:GetLibrary("CallbackHandler-1.0")
@@ -64,8 +62,8 @@ if not lib.MediaTable.background then lib.MediaTable.background = {} end
 lib.MediaTable.background["Blizzard Low Health"]			= [[Interface\FullScreenTextures\LowHealth]]
 lib.MediaTable.background["Blizzard Out of Control"]		= [[Interface\FullScreenTextures\OutOfControl]]
 lib.MediaTable.background["Blizzard Tabard Background"]		= [[Interface\TabardFrame\TabardFrameBackground]]
-lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
 lib.MediaTable.background["Blizzard Tooltip"]				= [[Interface\Tooltips\UI-Tooltip-Background]]
+lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
 
 -- BORDER
 if not lib.MediaTable.border then lib.MediaTable.border = {} end

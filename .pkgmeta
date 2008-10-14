@@ -1,2 +1,5 @@
-#
 package-as: LibSharedMedia-3.0
+
+ignore:
+    - tests
+
