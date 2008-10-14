@@ -59,8 +59,11 @@ lib.MediaType.SOUND			= "sound"				-- sound files
 -- populate lib with default Blizzard data
 -- BACKGROUND
 if not lib.MediaTable.background then lib.MediaTable.background = {} end
+lib.MediaTable.background["Blizzard Dialog Background"]		= [[Interface\DialogFrame\UI-DialogBox-Background]]
 lib.MediaTable.background["Blizzard Low Health"]			= [[Interface\FullScreenTextures\LowHealth]]
 lib.MediaTable.background["Blizzard Out of Control"]		= [[Interface\FullScreenTextures\OutOfControl]]
+lib.MediaTable.background["Blizzard Parchment"]				= [[Interface\AchievementFrame\UI-Achievement-Parchment-Horizontal]]
+lib.MediaTable.background["Blizzard Parchment 2"]			= [[Interface\AchievementFrame\UI-Achievement-Parchment]]
 lib.MediaTable.background["Blizzard Tabard Background"]		= [[Interface\TabardFrame\TabardFrameBackground]]
 lib.MediaTable.background["Blizzard Tooltip"]				= [[Interface\Tooltips\UI-Tooltip-Background]]
 lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
@@ -69,6 +72,7 @@ lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
 if not lib.MediaTable.border then lib.MediaTable.border = {} end
 lib.MediaTable.border["None"]								= [[Interface\None]]
 lib.MediaTable.border["Blizzard Dialog"]					= [[Interface\DialogFrame\UI-DialogBox-Border]]
+lib.MediaTable.border["Blizzard Dialog Gold"]				= [[Interface\DialogFrame\UI-DialogBox-Gold-Border]]
 lib.MediaTable.border["Blizzard Tooltip"]					= [[Interface\Tooltips\UI-Tooltip-Border]]
 
 -- FONT
