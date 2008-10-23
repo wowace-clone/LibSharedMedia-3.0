@@ -156,6 +156,12 @@ local function rebuildMediaList(mediatype)
 end
 
 function lib:Register(mediatype, key, data, langmask)
+	if type(mediatype) ~= "string" then
+		error(MAJOR..":Register(mediatype, key, data, langmask) - mediatype must be string, got "..type(mediatype))
+	end
+	if type(key) ~= "string" then
+		error(MAJOR..":Register(mediatype, key, data, langmask) - key must be string, got "..type(key))
+	end
 	if mediatype == lib.MediaType.FONT  and ((langmask and band(langmask, LOCALE_MASK) == 0) or not (langmask or locale_is_western)) then return false end
 	mediatype = mediatype:lower()
 	if not mediaTable[mediatype] then mediaTable[mediatype] = {} end
