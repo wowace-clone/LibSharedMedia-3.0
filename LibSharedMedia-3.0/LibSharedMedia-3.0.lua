@@ -71,6 +71,7 @@ lib.MediaTable.background["Solid"]							= [[Interface\Buttons\WHITE8X8]]
 -- BORDER
 if not lib.MediaTable.border then lib.MediaTable.border = {} end
 lib.MediaTable.border["None"]								= [[Interface\None]]
+lib.MediaTable.border["Blizzard Chat Bubble"]				= [[Interface\Tooltips\ChatBubble-Backdrop]]
 lib.MediaTable.border["Blizzard Dialog"]					= [[Interface\DialogFrame\UI-DialogBox-Border]]
 lib.MediaTable.border["Blizzard Dialog Gold"]				= [[Interface\DialogFrame\UI-DialogBox-Gold-Border]]
 lib.MediaTable.border["Blizzard Tooltip"]					= [[Interface\Tooltips\UI-Tooltip-Border]]
