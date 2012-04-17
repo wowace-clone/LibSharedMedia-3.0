@@ -1,4 +1,4 @@
-## Interface: 40000
+## Interface: 40300
 ## LoadOnDemand: 1
 
 ## Title: Lib: SharedMedia-3.0
@@ -15,3 +15,4 @@ LibStub\LibStub.lua
 CallbackHandler-1.0\CallbackHandler-1.0.lua
 
 LibSharedMedia-3.0\lib.xml
+
