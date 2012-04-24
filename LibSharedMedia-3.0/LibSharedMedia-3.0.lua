@@ -98,15 +98,9 @@ if locale == "koKR" then
 elseif locale == "zhCN" then
 	LOCALE_MASK = lib.LOCALE_BIT_zhCN
 --
-	if ReportPlayer then -- XXX 4.3.4 compat
-		SML_MT_font["伤害数字"]		= [[Fonts\ARKai_C.ttf]]
-		SML_MT_font["默认"]			= [[Fonts\ARKai_T.ttf]]
-		SML_MT_font["聊天"]			= [[Fonts\ARHei.ttf]]
-	else
-		SML_MT_font["伤害数字"]		= [[Fonts\ZYKai_C.ttf]]
-		SML_MT_font["默认"]			= [[Fonts\ZYKai_T.ttf]]
-		SML_MT_font["聊天"]			= [[Fonts\ZYHei.ttf]]
-	end
+	SML_MT_font["伤害数字"]		= [[Fonts\ARKai_C.ttf]]
+	SML_MT_font["默认"]			= [[Fonts\ARKai_T.ttf]]
+	SML_MT_font["聊天"]			= [[Fonts\ARHei.ttf]]
 --
 	lib.DefaultMedia["font"] = "默认" -- someone from zhCN please adjust if needed
 --
