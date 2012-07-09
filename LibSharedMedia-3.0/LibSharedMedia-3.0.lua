@@ -9,7 +9,7 @@ Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", 4030401 -- increase manualy on changes
+local MAJOR, MINOR = "LibSharedMedia-3.0", 4030402 -- increase manualy on changes
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -189,8 +189,7 @@ function lib:Fetch(mediatype, key, noDefault)
 	local mtt = mediaTable[mediatype]
 	local overridekey = overrideMedia[mediatype]
 	local result = mtt and ((overridekey and mtt[overridekey] or mtt[key]) or (not noDefault and defaultMedia[mediatype] and mtt[defaultMedia[mediatype]])) or nil
-
-	return result
+	return result ~= "" and result or nil
 end
 
 function lib:IsValid(mediatype, key)
