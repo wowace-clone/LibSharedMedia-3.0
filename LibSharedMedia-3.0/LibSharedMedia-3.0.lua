@@ -9,7 +9,7 @@ Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", 5000403 -- 5.0.4 v3 / increase manually on changes
+local MAJOR, MINOR = "LibSharedMedia-3.0", 5000404 -- 5.0.4 v4 / increase manually on changes
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -109,6 +109,8 @@ MORPHEUS_CYR.TTF	Morpheus						X		-		X		-		-
 NIM_____.ttf		Nimrod MT						X		-		X		-		-
 SKURRI.TTF			Skurri							X		-		-		-		-
 SKURRI_CYR.TTF		Skurri							X		-		X		-		-
+
+WARNING: Although FRIZQT___CYR is available on western clients, it doesn't support special European characters e.g. é, ï, ö
 ]]
 
 if locale == "koKR" then
@@ -167,7 +169,7 @@ else
 	SML_MT_font["AR ZhongkaiGBK Medium (Combat)"]	= [[Fonts\ARKai_C.TTF]]
 	SML_MT_font["AR ZhongkaiGBK Medium"]			= [[Fonts\ARKai_T.TTF]]
 	SML_MT_font["Arial Narrow"]						= [[Fonts\ARIALN.TTF]]
-	SML_MT_font["Friz Quadrata TT"]					= [[Fonts\FRIZQT___CYR.TTF]]
+	SML_MT_font["Friz Quadrata TT"]					= [[Fonts\FRIZQT__.TTF]]
 	SML_MT_font["MoK"]								= [[Fonts\K_Pagetext.TTF]]
 	SML_MT_font["Morpheus"]							= [[Fonts\MORPHEUS_CYR.TTF]]
 	SML_MT_font["Nimrod MT"]						= [[Fonts\NIM_____.ttf]]
