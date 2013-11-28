@@ -9,7 +9,7 @@ Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", 5000402 -- 5.0.4 v2 / increase manually on changes
+local MAJOR, MINOR = "LibSharedMedia-3.0", 5000403 -- 5.0.4 v3 / increase manually on changes
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -101,7 +101,7 @@ bHEI01B.ttf			AR Heiti2 Bold B5				-		-		-		-		X
 bKAI00M.ttf			AR Kaiti Medium B5				-		-		-		-		X
 bLEI00D.ttf			AR Leisu Demi B5				-		-		-		-		X
 FRIZQT__.TTF		Friz Quadrata TT				X		-		-		-		-
-FRIZQT___CYR.TTF	FrizQuadrataCTT					-		-		X		-		-
+FRIZQT___CYR.TTF	FrizQuadrataCTT					X		-		X		-		-
 K_Damage.TTF		YDIWingsM						-		X		X		-		-
 K_Pagetext.TTF		MoK								X		X		X		-		-
 MORPHEUS.TTF		Morpheus						X		-		-		-		-
@@ -167,7 +167,7 @@ else
 	SML_MT_font["AR ZhongkaiGBK Medium (Combat)"]	= [[Fonts\ARKai_C.TTF]]
 	SML_MT_font["AR ZhongkaiGBK Medium"]			= [[Fonts\ARKai_T.TTF]]
 	SML_MT_font["Arial Narrow"]						= [[Fonts\ARIALN.TTF]]
-	SML_MT_font["Friz Quadrata TT"]					= [[Fonts\FRIZQT__.TTF]]
+	SML_MT_font["Friz Quadrata TT"]					= [[Fonts\FRIZQT___CYR.TTF]]
 	SML_MT_font["MoK"]								= [[Fonts\K_Pagetext.TTF]]
 	SML_MT_font["Morpheus"]							= [[Fonts\MORPHEUS_CYR.TTF]]
 	SML_MT_font["Nimrod MT"]						= [[Fonts\NIM_____.ttf]]
