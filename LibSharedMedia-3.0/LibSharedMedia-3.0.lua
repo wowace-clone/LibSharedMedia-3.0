@@ -9,7 +9,7 @@ Dependencies: LibStub, CallbackHandler-1.0
 License: LGPL v2.1
 ]]
 
-local MAJOR, MINOR = "LibSharedMedia-3.0", 6010002 -- 6.1.0 v2 / increase manually on changes
+local MAJOR, MINOR = "LibSharedMedia-3.0", 6010003 -- Increase manually on changes
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -195,7 +195,7 @@ lib.DefaultMedia.statusbar = "Blizzard"
 
 -- SOUND
 if not lib.MediaTable.sound then lib.MediaTable.sound = {} end
-lib.MediaTable.sound["None"]								= [[Interface\Quiet.ogg]]	-- Relies on the fact that PlaySound[File] doesn't error on non-existing input.
+lib.MediaTable.sound["None"]		= C_RaidLocks and 1 or [[Interface\Quiet.ogg]] -- Relies on the fact that PlaySound[File] doesn't error on non-existing input.
 lib.DefaultMedia.sound = "None"
 
 local function rebuildMediaList(mediatype)
